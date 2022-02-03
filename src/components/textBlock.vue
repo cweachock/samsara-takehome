@@ -1,20 +1,35 @@
 <template>
-<h2>{{textHeader}}</h2>
+  <div class="tb">
+    <h1 class="tb-header">{{ header }}</h1>
+    <h2 class="tb-header">{{ subheader }}</h2>
+  </div>
 </template>
 
 <script>
-
 export default {
-  name: 'textBlock',
+  name: "TextBlock",
   props: {
-    textHeader: String
-  }
-}
+    header: String,
+    subheader: String,
+  },
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h2{
-    text-align:center;
+<style lang="scss" scoped>
+@import "@/scss/includes/globals.scss";
+
+h1,
+h2 {
+  font-family: $fontnormal;
+}
+h1 {
+  color: $whitecolor;
+  font-size: 90px;
+  font-weight: 500;
+  padding: 0 0 0.5em 0;
+}
+h2 {
+  color: $primaryaccentcolor;
+  font-size: 36px;
 }
 </style>

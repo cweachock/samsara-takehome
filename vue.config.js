@@ -1,4 +1,4 @@
 module.exports = {
-    publicPath: '/vue-practice/',
-    outputDir: "docs"
-}
+  publicPath: "/samsara-takehome/",
+  outputDir: "docs",
+};
