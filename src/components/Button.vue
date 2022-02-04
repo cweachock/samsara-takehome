@@ -8,11 +8,16 @@ export default {
   props: {
     text: String,
   },
+  methods: {},
 };
 </script>
 
 <style lang="scss" scoped>
 button {
   pointer-events: auto;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
 }
 </style>

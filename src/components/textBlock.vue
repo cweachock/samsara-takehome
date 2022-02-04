@@ -1,7 +1,7 @@
 <template>
   <div class="tb">
     <h1 class="tb-header">{{ header }}</h1>
-    <h2 class="tb-header">{{ subheader }}</h2>
+    <h2 class="tb-header" v-html="subheader" />
   </div>
 </template>
 
@@ -17,6 +17,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/scss/includes/globals.scss";
+@import "@/scss/includes/mixins.scss";
 
 h1,
 h2 {
@@ -24,12 +25,14 @@ h2 {
 }
 h1 {
   color: $whitecolor;
-  font-size: 90px;
+  @include fluid-type($small, $large, 26px, 75px);
   font-weight: 500;
   padding: 0 0 0.5em 0;
 }
 h2 {
   color: $primaryaccentcolor;
-  font-size: 36px;
+  @include fluid-type($small, $large, 21px, 26px);
+  line-height: 1.3;
+  font-weight: 400;
 }
 </style>

@@ -1,21 +1,42 @@
 {
   "headline": "Top 3 Features",
-  "subheader": "Here are some of our favorite features",
+  "subheader": "Here are some of our favorite&nbsp;features",
   "featuresList": [
     {
       "id": 1,
-      "feature": "Real-time<br>GPS Tracking",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. "
+      "type": "modal",
+      "featureName": "Real-time GPS&nbsp;Tracking",
+      "featureDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. ",
+      "media": {
+        "src": "samsara-takehome-feature-realtime-gps",
+        "width": 580,
+        "height": 640,
+        "alt": "Samsara gps image realtime image locator."
+      }
     },
     {
       "id": 2,
-      "feature": "Ai-enabled<br>Safety Cameras",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. "
+      "type": "modal",
+      "featureName": "Ai-enabled Safety&nbsp;Cameras",
+      "featureDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. ",
+      "media": {
+        "src": "samsara-takehome-feature-ai-enabled-safety-cameras",
+        "width": 580,
+        "height": 640,
+        "alt": "Samsara ai security video feed image of transportation driving checking phone in hand."
+      }
     },
     {
       "id": 3,
-      "feature": "Routing and<br>Location Sharing",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. "
+      "type": "modal",
+      "featureName": "Routing and Location&nbsp;Sharing",
+      "featureDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. ",
+      "media": {
+        "src": "samsara-takehome-feature-routing-location-sharing",
+        "width": 580,
+        "height": 640,
+        "alt": "Picture of person holding gps live share directions in Samsara mobile app."
+      }
     }
   ]
 }
