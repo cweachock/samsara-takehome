@@ -1,4 +1,4 @@
 module.exports = {
-  publicPath: "/samsara-takehome/",
+  publicPath: process.env.NODE_ENV === "production" ? "/REPO_NAME/" : "/",
   outputDir: "docs",
 };
