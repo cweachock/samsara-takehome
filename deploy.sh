@@ -14,6 +14,6 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@github.com:cweachock/vue-practice.git master:gh-pages
+git push -f git@github.com:cweachock/samsara-takehome.git master:gh-pages
 
 cd -
