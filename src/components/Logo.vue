@@ -60,27 +60,6 @@ export default {
 }
 svg {
   height: 100%;
-  animation: 1s ease-out 0s 1 enterTransition;
-}
-
-@keyframes enterTransition {
-  0% {
-    clip-path: polygon(
-      -0.44% 60.14%,
-      -17.95% 4.13%,
-      91.14% -17.77%,
-      97.11% 53.11%,
-      53.47% 80.11%
-    );
-  }
-  100% {
-    clip-path: polygon(
-      -14.99% 102.64%,
-      -17.95% 4.13%,
-      91.14% -17.77%,
-      137.11% 80.61%,
-      46.2% 130.11%
-    );
-  }
+  animation: 1.5s ease-out 0s 1 enterTransition;
 }
 </style>

@@ -17,3 +17,12 @@ $aspect-square: 100%;
 
 // Widths
 $content-width: 1360px;
+
+@keyframes enterTransition {
+  0% {
+    clip-path: circle(40% at 50% 34%);
+  }
+  100% {
+    clip-path: circle(100% at 50% 34%);
+  }
+}

@@ -22,17 +22,25 @@ export default {
 h1,
 h2 {
   font-family: $fontnormal;
+  padding-left: 5px;
+  @media (min-width: $small) {
+    padding-left: 0;
+  }
 }
 h1 {
   color: $whitecolor;
-  @include fluid-type($small, $large, 26px, 75px);
+  @include fluid-type($small, $large, 32px, 75px);
   font-weight: 500;
-  padding: 0 0 0.5em 0;
 }
 h2 {
   color: $primaryaccentcolor;
   @include fluid-type($small, $large, 21px, 26px);
   line-height: 1.3;
   font-weight: 400;
+  padding-right: 2em;
+
+  @media (min-width: $small) {
+    padding-right: 0;
+  }
 }
 </style>
