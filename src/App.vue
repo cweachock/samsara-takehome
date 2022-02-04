@@ -16,7 +16,7 @@
               <li
                 v-for="(item, i) in featuresList"
                 :key="i"
-                :class="[checkActiveState(item.id) ? 'active' : 'inactive']"
+                :class="[index === item.id ? 'active' : 'inactive']"
                 ref="featureItem"
               >
                 <span class="list-numerator" v-html="listNumerator(item.id)" />
@@ -38,9 +38,13 @@
           <div class="main-section-01-container">
             <Media
               class="main-section-01-container--media"
-              :src="featuresList[0].media.src"
-              :alt="featuresList[0].media.alt"
+              :src="src"
+              :alt="alt"
               ref="media"
+              role="button"
+              @click.native="
+                $refs.modal.openModal(featureName, featureDescription, index)
+              "
             />
           </div>
         </div>
@@ -70,9 +74,25 @@ export default {
       headerLink: data.header.link,
       subheader: data.subheader,
       featuresList: data.featuresList,
+      src: data.featuresList[0].media.src,
+      alt: data.featuresList[0].media.alt,
+      featureName: data.featuresList[0].featureName,
+      featureDescription: data.featuresList[0].featureDescription,
       active: false,
       index: 1,
     };
+  },
+  watch: {
+    index() {
+      for (let i = 0; i < this.featuresList.length; i++) {
+        if (this.index === this.featuresList[i].id) {
+          this.src = this.featuresList[i].media.src;
+          this.alt = this.featuresList[i].media.alt;
+          this.featureName = this.featuresList[i].featureName;
+          this.featureDescription = this.featuresList[i].featureDescription;
+        }
+      }
+    },
   },
   components: {
     TextBlock,
@@ -92,7 +112,12 @@ export default {
   methods: {
     checkActiveState(id) {
       if (this.index === id) {
-        //this.$refs.media.src = this.featuresList[id].media.src;
+        this.$nextTick(() => {
+          if (this.featuresList[id] !== undefined) {
+            this.src = this.featuresList[id].media.src;
+          }
+        });
+        //console.log(this.$refs.media);
         return true;
       }
     },
@@ -216,6 +241,14 @@ header {
       }
       &--media {
         max-width: 400px;
+        transition: all 300ms ease;
+        &:hover {
+          cursor: pointer;
+          opacity: 0.7;
+        }
+        &:active {
+          transform: translateY(-5px);
+        }
       }
       &--center {
         display: flex;
