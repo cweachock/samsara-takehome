@@ -257,8 +257,9 @@ header {
           opacity: 1;
           .list-numerator {
             font-size: 18px;
-            padding-left: 0.5em;
-            padding-top: 0.5em;
+            position: absolute;
+            top: 0.25em;
+            left: 0.25em;
           }
           p {
             position: absolute;
