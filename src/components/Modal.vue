@@ -157,8 +157,8 @@ $easing: ease;
   &-modal-close {
     background: none;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 0.5em;
+    right: 0.5em;
     margin: 0.5em;
     border: 0;
     padding: 1em;
@@ -166,22 +166,50 @@ $easing: ease;
     transition: all 100ms ease-out;
     background: none;
     z-index: 2;
-    .icon-close {
-      color: $darkcolor;
-      font-weight: 700;
-      font-size: 1em;
-    }
+    transform-origin: center;
+
     &:hover {
+      opacity: 1;
       transform: scale(1.1);
       cursor: pointer;
     }
-    &:active {
-      transform: scale(1.1), translateY(3px);
-      cursor: pointer;
+    .icon-close {
+      color: $darkcolor;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 32px;
+      height: 32px;
+      opacity: 0.5;
+      left: 0;
+      bottom: 0;
+
+      &:hover {
+        opacity: 1;
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+
+      &:before,
+      &:after {
+        position: absolute;
+        left: 15px;
+        content: " ";
+        height: 33px;
+        width: 2px;
+        background-color: $darkcolor;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
     }
   }
   &-modal-body {
     padding: 30px 20px;
+    padding-top: 60px;
     overflow: auto;
     display: flex;
     flex-direction: column;
@@ -202,7 +230,7 @@ $easing: ease;
       color: $darkcolor;
     }
     p {
-      @include fluid-type($small, $large, 21px, 24px);
+      @include fluid-type($small, $large, 18px, 21px);
       font-weight: 400;
       line-height: 1.4;
       margin-top: 2em;
