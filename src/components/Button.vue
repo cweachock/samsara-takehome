@@ -17,7 +17,6 @@ button {
   pointer-events: auto;
   &:hover {
     cursor: pointer;
-    opacity: 0.5;
   }
 }
 </style>

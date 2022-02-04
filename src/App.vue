@@ -1,6 +1,8 @@
 <template>
   <div>
-    <header></header>
+    <header>
+      <a :href="headerLink"><Logo /></a>
+    </header>
     <main id="SamsaraApp">
       <section class="main-section-01">
         <div class="main-section-01-container--center">
@@ -11,7 +13,12 @@
               :subheader="subheader"
             />
             <ul role="list">
-              <li v-for="(item, i) in featuresList" :key="i">
+              <li
+                v-for="(item, i) in featuresList"
+                :key="i"
+                :class="[checkActiveState(item.id) ? 'active' : 'inactive']"
+                ref="featureItem"
+              >
                 <span class="list-numerator" v-html="listNumerator(item.id)" />
                 <Button
                   v-if="item.type === 'modal'"
@@ -20,7 +27,8 @@
                   @click.native="
                     $refs.modal.openModal(
                       item.featureName,
-                      item.featureDescription
+                      item.featureDescription,
+                      item.id
                     )
                   "
                 />
@@ -38,6 +46,7 @@
         </div>
       </section>
       <Modal ref="modal">
+        <template v-slot:id />
         <template v-slot:header />
         <template v-slot:body />
       </Modal>
@@ -51,15 +60,18 @@ import Button from "@/components/Button.vue";
 import data from "@/data/data.json";
 import Media from "@/components/Media.vue";
 import Modal from "@/components/Modal.vue";
+import Logo from "@/components/Logo.vue";
 
 export default {
   name: "SamsaraApp",
   data() {
     return {
       headline: data.headline,
+      headerLink: data.header.link,
       subheader: data.subheader,
       featuresList: data.featuresList,
       active: false,
+      index: 1,
     };
   },
   components: {
@@ -67,9 +79,35 @@ export default {
     Button,
     Media,
     Modal,
+    Logo,
   },
-  computed: {},
+  computed: {
+    listClasses() {
+      return {
+        active: this.active,
+        inactive: !this.active,
+      };
+    },
+  },
   methods: {
+    checkActiveState(id) {
+      if (this.index === id) {
+        //this.$refs.media.src = this.featuresList[id].media.src;
+        return true;
+      }
+    },
+    rotateFeature() {
+      setInterval(
+        function () {
+          if (this.index !== this.featuresList.length) {
+            this.index += 1;
+          } else {
+            this.index = 1;
+          }
+        }.bind(this),
+        3000
+      );
+    },
     listNumerator(index) {
       if (index < 10) {
         return "0" + index;
@@ -78,6 +116,9 @@ export default {
       }
     },
   },
+  mounted() {
+    this.rotateFeature();
+  },
 };
 </script>
 
@@ -85,6 +126,23 @@ export default {
 @import "@/scss/includes/globals.scss";
 @import "./css/reset.css";
 @import "@/scss/includes/mixins.scss";
+
+header {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  top: 1em;
+  right: 1em;
+  z-index: 1;
+  a {
+    height: 100%;
+    display: block;
+    position: relative;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
 
 #SamsaraApp {
   h1,
@@ -114,24 +172,38 @@ export default {
     transform: translate(-50%, -50%);
     .list-numerator {
       font-size: 100px;
-      @include fluid-type($small, $large, 30px, 100px);
+      position: absolute;
+      @include fluid-type($small, $large, 30px, 80px);
       color: $whitecolor;
       font-family: $fontnormal;
-      padding-right: 0.5em;
     }
     &-container {
       button {
         width: 200px;
+        margin-left: 7vw;
       }
       &:nth-child(1) {
-        max-width: 70%;
+        max-width: 40%;
       }
       &:nth-child(2) {
-        max-width: 30%;
+        max-width: 60%;
         align-self: center;
-        padding-left: 3em;
-        margin-top: 6em;
-        padding-right: 2em;
+        padding: 0 2em;
+        margin-top: 2em;
+      }
+      li {
+        padding-bottom: 75px;
+        width: max-content;
+        transition: all 300ms ease;
+        &.inactive {
+          opacity: 0.5;
+          &:hover {
+            opacity: 1;
+          }
+        }
+        &.active {
+          opacity: 1;
+        }
       }
       &--button {
         font-size: 36px;
@@ -140,7 +212,6 @@ export default {
         color: $whitecolor;
         background: transparent;
         border: none;
-        padding: 1em 0;
         text-align: left;
       }
       &--media {
@@ -152,11 +223,34 @@ export default {
         align-items: center;
         justify-content: center;
         height: 100%;
+        max-width: $content-width;
+        margin: 0 auto;
+        padding: 0 1em;
       }
       &-intro {
         padding-bottom: 2em;
       }
     }
+  }
+}
+@keyframes logoHoverTransition {
+  0% {
+    clip-path: polygon(
+      -14.99% 102.64%,
+      -17.95% 4.13%,
+      91.14% -17.77%,
+      137.11% 80.61%,
+      46.2% 130.11%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      -0.44% 60.14%,
+      -17.95% 4.13%,
+      91.14% -17.77%,
+      97.11% 53.11%,
+      53.47% 80.11%
+    );
   }
 }
 </style>

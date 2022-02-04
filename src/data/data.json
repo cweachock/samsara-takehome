@@ -1,9 +1,13 @@
 {
   "headline": "Top 3 Features",
+  "header": {
+    "link": "https://samsara.com"
+  },
   "subheader": "Here are some of our favorite&nbsp;features",
   "featuresList": [
     {
       "id": 1,
+      "active": true,
       "type": "modal",
       "featureName": "Real-time GPS&nbsp;Tracking",
       "featureDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. ",
@@ -17,6 +21,7 @@
     {
       "id": 2,
       "type": "modal",
+      "active": false,
       "featureName": "Ai-enabled Safety&nbsp;Cameras",
       "featureDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. ",
       "media": {
@@ -29,6 +34,7 @@
     {
       "id": 3,
       "type": "modal",
+      "active": false,
       "featureName": "Routing and Location&nbsp;Sharing",
       "featureDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip. ",
       "media": {

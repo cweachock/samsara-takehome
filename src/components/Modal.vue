@@ -5,7 +5,9 @@
         <div class="m-modal-backdrop" @click="closeModal()" />
         <div class="m-modal-dialog" ref="modaldialog">
           <div class="m-modal-body" ref="modalbody" tabindex="-1">
+            <span class="m-modal-numerator" v-if="id" v-html="id" />
             <h1 v-if="header" v-html="header" />
+            <span class="header-separator" />
             <p v-if="body" v-html="body" />
             <button
               type="button"
@@ -34,6 +36,7 @@ export default {
       focusableElements: "button, a",
       body: "",
       header: "",
+      id: null,
     };
   },
   computed: {
@@ -83,8 +86,13 @@ export default {
         this.previousFocus.focus();
       }
     },
-    openModal(header, body) {
+    openModal(header, body, id) {
       this.show = true;
+      if (id < 10) {
+        this.id = "0" + id;
+      } else {
+        this.id = id;
+      }
       this.body = body;
       this.header = header;
       this.previousFocus = document.activeElement;
@@ -125,6 +133,12 @@ $easing: ease;
     justify-content: center;
     align-items: center;
     height: 100%;
+    &-numerator {
+      font-family: $fontnormal;
+      @include fluid-type($small, $large, 30px, 80px);
+      font-weight: 500;
+      color: $primaryaccentcolor;
+    }
   }
   &-modal-backdrop {
     background-color: rgba(0, 0, 0, 0.5);
@@ -189,7 +203,6 @@ $easing: ease;
         transform: scale(1.1);
         cursor: pointer;
       }
-
       &:before,
       &:after {
         position: absolute;
@@ -216,6 +229,13 @@ $easing: ease;
     align-items: stretch;
     height: 100%;
 
+    h1 + .header-separator {
+      width: 70px;
+      height: 1px;
+      margin-top: 1em;
+      background: $darkcolor;
+    }
+
     h1,
     h2,
     p {
@@ -233,7 +253,7 @@ $easing: ease;
       @include fluid-type($small, $large, 18px, 21px);
       font-weight: 400;
       line-height: 1.4;
-      margin-top: 2em;
+      margin-top: 1em;
     }
   }
 }
