@@ -29,7 +29,7 @@ h2 {
 }
 h1 {
   color: $whitecolor;
-  @include fluid-type($small, $large, 32px, 75px);
+  @include fluid-type($small, $large, 30px, 75px);
   font-weight: 500;
 }
 h2 {
