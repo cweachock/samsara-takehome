@@ -136,8 +136,8 @@ $easing: ease;
     &-numerator {
       font-family: $fontnormal;
       //@include fluid-type(30px, 80px);
-      font-size: min(max(1rem, 4vw), 80px);
-
+      //font-size: min(max(1rem, 4vw), 80px);
+      font-size: clamp(30px, 4vw, 80px);
       //@include fluid-type($small, $large, 30px, 80px);
       font-weight: 500;
       color: $primaryaccentcolor;
@@ -249,15 +249,16 @@ $easing: ease;
     h2 {
       font-family: $fontnormal;
       //@include fluid-type(30px, 40px);
-      font-size: min(max(1rem, 4vw), 40px);
+      //font-size: min(max(1rem, 4vw), 40px);
+      font-size: clamp(30px, 4vw, 40px);
       // @include fluid-type($small, $large, 30px, 40px);
       font-weight: 500;
       color: $darkcolor;
     }
     p {
       //@include fluid-type(18px, 21px);
-      font-size: min(max(1rem, 4vw), 21px);
-
+      //font-size: min(max(1rem, 4vw), 21px);
+      font-size: clamp(18px, 4vw, 21px);
       //@include fluid-type($small, $large, 18px, 21px);
       font-weight: 400;
       line-height: 1.4;
