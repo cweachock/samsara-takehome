@@ -30,12 +30,14 @@ h2 {
 h1 {
   color: $whitecolor;
   //@include fluid-type($small, $large, 30px, 75px);
-  @include fluid-type(30px, 75px);
+  //@include fluid-type(30px, 75px);
   font-weight: 500;
+  font-size: min(max(1rem, 4vw), 75px);
 }
 h2 {
   color: $primaryaccentcolor;
-  @include fluid-type(21px, 26px);
+  //@include fluid-type(21px, 26px);
+  font-size: min(max(1rem, 4vw), 26px);
   line-height: 1.3;
   font-weight: 400;
   padding-right: 2em;
