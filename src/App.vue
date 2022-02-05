@@ -278,7 +278,8 @@ header {
       }
     }
     .list-numerator {
-      @include fluid-type($small, $large, 40px, 80px);
+      @include fluid-type(40px, 80px);
+      //@include fluid-type($small, $large, 40px, 80px);
       color: $whitecolor;
       font-family: $fontnormal;
 
@@ -325,8 +326,8 @@ header {
         }
       }
       &--button {
-        font-size: 36px;
-        @include fluid-type($small, $large, 21px, 32px);
+        @include fluid-type(21px, 32px);
+        //@include fluid-type($small, $large, 21px, 32px);
         font-family: $fontnormal;
         color: $whitecolor;
         background: transparent;

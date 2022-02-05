@@ -135,7 +135,8 @@ $easing: ease;
     height: 100%;
     &-numerator {
       font-family: $fontnormal;
-      @include fluid-type($small, $large, 30px, 80px);
+      @include fluid-type(30px, 80px);
+      //@include fluid-type($small, $large, 30px, 80px);
       font-weight: 500;
       color: $primaryaccentcolor;
     }
@@ -245,12 +246,14 @@ $easing: ease;
     h1,
     h2 {
       font-family: $fontnormal;
-      @include fluid-type($small, $large, 30px, 40px);
+      @include fluid-type(30px, 40px);
+      // @include fluid-type($small, $large, 30px, 40px);
       font-weight: 500;
       color: $darkcolor;
     }
     p {
-      @include fluid-type($small, $large, 18px, 21px);
+      @include fluid-type(18px, 21px);
+      //@include fluid-type($small, $large, 18px, 21px);
       font-weight: 400;
       line-height: 1.4;
       margin-top: 1em;
