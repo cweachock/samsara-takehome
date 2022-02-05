@@ -257,17 +257,19 @@ header {
           opacity: 1;
           .list-numerator {
             font-size: 18px;
-            padding-left: 0.5em;
-            padding-top: 0.5em;
+            position: relative;
+            display: inline-block;
+            top: -1em;
           }
           p {
-            position: absolute;
+            position: relative;
             font-size: 21px;
-            left: 2em;
+            left: 0.5em;
             top: 0.5em;
             color: $whitecolor;
             margin: 0;
             width: min-content;
+            display: inline-block;
           }
           img {
             width: 275px;
@@ -277,7 +279,9 @@ header {
       }
     }
     .list-numerator {
-      @include fluid-type($small, $large, 40px, 80px);
+      //@include fluid-type(40px, 80px);
+      font-size: min(max(1rem, 4vw), 80px);
+      //@include fluid-type($small, $large, 40px, 80px);
       color: $whitecolor;
       font-family: $fontnormal;
 
@@ -324,8 +328,9 @@ header {
         }
       }
       &--button {
-        font-size: 36px;
-        @include fluid-type($small, $large, 21px, 32px);
+        //@include fluid-type(21px, 32px);
+        font-size: min(max(1rem, 4vw), 32px);
+        //@include fluid-type($small, $large, 21px, 32px);
         font-family: $fontnormal;
         color: $whitecolor;
         background: transparent;
