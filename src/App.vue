@@ -280,7 +280,8 @@ header {
     }
     .list-numerator {
       //@include fluid-type(40px, 80px);
-      font-size: min(max(1rem, 4vw), 80px);
+      //font-size: min(max(1rem, 4vw), 80px);
+      font-size: clamp(40px, 4vw, 80px);
       //@include fluid-type($small, $large, 40px, 80px);
       color: $whitecolor;
       font-family: $fontnormal;
@@ -329,7 +330,8 @@ header {
       }
       &--button {
         //@include fluid-type(21px, 32px);
-        font-size: min(max(1rem, 4vw), 32px);
+        //font-size: min(max(1rem, 4vw), 32px);
+        font-size: clamp(21px, 4vw, 32px);
         //@include fluid-type($small, $large, 21px, 32px);
         font-family: $fontnormal;
         color: $whitecolor;
