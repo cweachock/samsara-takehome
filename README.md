@@ -3,7 +3,7 @@
 ## Overview
 
 I wanted to use the VueJS framework, which I currently use at North Face, and continuing to learn, so I set up a [vue cli hello world boiler plate](https://cli.vuejs.org/guide/creating-a-project.html#vue-create)
-using [npm](https://www.npmjs.com/) locally on my computer, ingesting the data.json file and figured out how to create a specific component to handle the data, then followed the [documentation](https://cli.vuejs.org/guide/deployment.html) on how to make it work with Github Pages while also running into some issues displaying. Please let me know if this does not load.
+using [npm](https://www.npmjs.com/) locally on my computer, ingesting the `data.json` file and figured out how to ingest the data into the `App`, then followed the [documentation](https://cli.vuejs.org/guide/deployment.html) on how to make it work with Github Pages while also running into some issues displaying. Please let me know if this does not load.
 
 ## Understanding the design
 
